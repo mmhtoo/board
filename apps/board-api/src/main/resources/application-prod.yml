@@ -1,0 +1,12 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: board-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${DATABASE_NAME}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: create
