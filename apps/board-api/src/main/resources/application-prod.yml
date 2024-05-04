@@ -4,9 +4,12 @@ spring:
   application:
     name: board-api
   datasource:
-    url: jdbc:postgresql://localhost:5432/${DATABASE_NAME}
-    username: ${DATABASE_USER}
-    password: ${DATABASE_PASSWORD}
+    url: ${DATABASE_URL:dbUrl}
+    username: ${DATABASE_USER:dbUser}
+    password: ${DATABASE_PASSWORD:dbPassword}
   jpa:
     hibernate:
       ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
