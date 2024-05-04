@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: board-api
+  datasource:
+    url: ${DATABASE_URL:dbUrl}
+    username: ${DATABASE_USER:dbUser}
+    password: ${DATABASE_PASSWORD:dbPassword}
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect

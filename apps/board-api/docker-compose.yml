@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  postgres:
+    image : postgres:15
+    container_name: postgres_db
+    env_file: .env
+    volumes:
+      - board_postgres:/var/lib/postgresql/data -ro
+  api:
+    build: .
+    container_name: board_api
+    ports:
+      - "8080:8083"
+    env_file: .env
+    depends_on:
+      - postgres
+volumes:
+  board_postgres:
